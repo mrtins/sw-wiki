@@ -8,14 +8,14 @@ import { Component } from '@angular/core';
 })
 export class CharactersComponent {
 
-  name: any;
+  characters: any[] = [];
 
   constructor(private _service: CharactersService) { 
     this._service
       .getCharacters()
       .subscribe(res => {
         console.log(res);
-        this.name = res;
+        this.characters = res;
       }, err => console.log(err));
   }
 
