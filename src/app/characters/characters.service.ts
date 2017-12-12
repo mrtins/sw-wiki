@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
+import { Http } from '@angular/http';
 import { CharactersComponent } from './characters.component';
 import 'rxjs/add/operator/map';
 
@@ -8,16 +7,13 @@ import 'rxjs/add/operator/map';
 export class CharactersService {
 
   private _baseUrl = 'https://swapi.co/api/';
-  private _headers: Headers;
 
   constructor(private _http: Http) {
-    this._headers = new Headers();
-    this._headers.append('Content-Type', 'application/json');
   }
 
-  getCharacters(): Observable<CharactersComponent[]> {
+  getCharacters() {
     return this._http
-      .get('https://swapi.co/api/people/1')
+      .get(this._baseUrl + 'people/')
       .map(res => res.json());
   }
 }
