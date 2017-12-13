@@ -13,20 +13,24 @@ import { CharactersService } from './characters/characters.service';
 import { StarshipsComponent } from './starships/starships.component';
 import { StarshipsService } from './starships/starships.service';
 
+import { FilmsComponent } from './films/films.component';
+import { FilmsService } from './films/films.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CharactersComponent,
-    StarshipsComponent
+    StarshipsComponent,
+    FilmsComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     routing
   ],
-  providers: [CharactersService, StarshipsService],
+  providers: [CharactersService, StarshipsService, FilmsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
