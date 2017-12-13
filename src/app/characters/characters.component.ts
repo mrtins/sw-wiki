@@ -10,12 +10,12 @@ export class CharactersComponent {
 
   characters: any[] = [];
 
-  constructor(private _service: CharactersService) { 
+  constructor(private _service: CharactersService) {
     this._service
       .getCharacters()
       .subscribe(res => {
         console.log(res);
-        this.characters = res;
+        this.characters = res.results;
       }, err => console.log(err));
   }
 
