@@ -11,9 +11,9 @@ export class CharactersService {
   constructor(private _http: Http) {
   }
 
-  getCharacters() {
+  getCharacters(type = 'people/') {
     return this._http
-      .get(this._baseUrl + 'people/')
+      .get(this._baseUrl + type)
       .map(res => res.json());
   }
 }
